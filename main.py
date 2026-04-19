@@ -98,8 +98,11 @@ def print_deck(deck):
      for i in range(len(deck)):
         pokemon = deck[i]
         print(f"{i+1}. {pokemon['name']} ({pokemon['element']}) lvl:{pokemon['level']} HP:{pokemon['hp']}/{pokemon['max_hp']} ATK:{pokemon['attack']}")
-        
+         
 
+def lvl_calc(turn):
+    max_lvl = int(1 + turn / 5)
+    return random.choice(list(range(1, max_lvl + 1))[-3:])        
 
 
 def main_cycle():
@@ -108,7 +111,7 @@ def main_cycle():
 
 
     while player['lives']>0:
-        opponent_level=1+total_wins//3
+        opponent_level=lvl_calc(total_wins)
         opponent = generate_pokemon(opponent_level)
 
         print('Твоя колода:')
