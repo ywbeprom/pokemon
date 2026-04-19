@@ -180,7 +180,7 @@ def main_cycle():
                 print("У тебя не осталось покемонов! Добавляем нового...")
                 player['deck'].append(generate_pokemon(1))
 
-    print(f'Ты набрал{total_wins} побед. Спасибо за игру!')
+    print(f'Ты набрал {total_wins} побед. Спасибо за игру!')
 
 
 main_cycle()             
