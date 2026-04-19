@@ -1,18 +1,18 @@
 import random
 
-ELEMENT_BONUS = {
+element_bonus = {
     "fire": {"water": 0.75, "earth": 1.5, "air": 1.0, "electric": 1.0},
     "water": {"fire": 1.5, "earth": 0.75, "air": 1.0, "electric": 1.0},
     "earth": {"fire": 0.75, "water": 1.5, "air": 1.0, "electric": 1.0},
     "air": {"fire": 1.0, "water": 1.0, "earth": 1.5, "electric": 0.75},
     "electric": {"fire": 1.0, "water": 1.5, "earth": 0.75, "air": 1.0}
 }
-POSSIBLE_NAMES = ["Charmander", "Squirtle", "Bulbasaur", "Pikachu", "Eevee"]
-ELEMENTS = ["fire", "water", "earth", "air", "electric"]
+possible_names = ["Charmander", "Squirtle", "Bulbasaur", "Pikachu", "Eevee"]
+elements = ["fire", "water", "earth", "air", "electric"]
 
 def generate_pokemon(level=1):
-    name = random.choice(POSSIBLE_NAMES)
-    element = random.choice(ELEMENTS)
+    name = random.choice(possible_names)
+    element = random.choice(elements)
     max_hp = 50 + level * 50
     attack = 20 + level * 20
     return {
@@ -39,7 +39,7 @@ def calculate_damage(attacker, defender):
     if att_elem == def_elem:
         bonus=1.0
     else:
-        bonus=ELEMENT_BONUS[att_elem][def_elem]
+        bonus=element_bonus[att_elem][def_elem]
     random_damage = base_damage * bonus* random.uniform(0.9,1.2)
     return round(random_damage)    
 
