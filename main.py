@@ -120,9 +120,9 @@ def main_cycle():
         print(f"Противник: {opponent['name']} ({opponent['element']}) lvl:{opponent['level']} HP:{opponent['hp']}/{opponent['max_hp']} ATK:{opponent['attack']}")
 
         while True:
-            choice=int(input('Введи число от 1 до 3: '))
+            choice=int(input(f'Введи число от 1 до {len(player['deck'])}: '))
             if choice==0:
-                print('Введи число от 1 до 3: ')
+                print(f'Введи число от 1 до {len(player['deck'])}:  ')
             if 1 <= choice <= len(player['deck']):
                 break
 
